@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="demoApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Popup Menu</title>
+
+    <!--
+      IE8 support, see AngularJS Internet Explorer Compatibility http://docs.angularjs.org/guide/ie
+      For Firefox 3.6, you will also need to include jQuery and ECMAScript 5 shim
+    -->
+    <!--[if lt IE 9]>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
+      <script>
+        document.createElement('ui-select');
+        document.createElement('ui-select-match');
+        document.createElement('ui-select-choices');
+      </script>
+    <![endif]-->
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js"></script>
+	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="./dist/angular-popup-menu.css" rel="stylesheet" />
+    <script src="./dist/angular-popup-menu.js"></script>
+
+    <link href="./assets/demoApp.css" rel="stylesheet" />
+    <script src="./assets/demoApp.js"></script>
+    <script src="./assets/indexController.js"></script>
+
+</head>
+<body>
+
+    <div ng-controller="indexController as $ctrl">
+		Press this little chevron to see a popup menu: &nbsp;
+        <apm-menu>
+            <apm-menu-chevron apm-glyphicon="'glyphicon-menu-down'">
+            </apm-menu-chevron>
+            <apm-menu-content>
+                <apm-menu-item ng-repeat="menuItem in $ctrl.menuItems" apm-divider="menuItem.divider">
+                    <apm-menu-button ng-click="$ctrl.onMenuClick(menuItem)">
+                        <apm-menu-icon apm-glyphicon="menuItem.glyphicon"></apm-menu-icon>
+                        {{menuItem.caption}}
+                    </apm-menu-button>
+                </apm-menu-item>
+            </apm-menu-content>
+        </apm-menu>
+    </div>
+
+</body>
+</html>

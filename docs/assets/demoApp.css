@@ -1,0 +1,9 @@
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    padding-top: 100px;
+}
