@@ -1,7 +1,7 @@
 /*!
  * angular-popup-menu
  * http://github.com/mkvster/angular-popup-menu
- * Version: 0.0.0 - 2016-10-06T02:49:48.633Z
+ * Version: 0.0.0 - 2016-10-07T17:29:47.022Z
  * License: MIT
  */
 
